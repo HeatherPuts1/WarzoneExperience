@@ -82,3 +82,25 @@ Thumbs.db
 
 # Plastic SCM
 .plastic/
+
+# Unity generated files
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ibrary/
+sysinfo.txt
+*.stackdump
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Recovery files
+**/Recovery.meta
+**/*_BACKUP_*
+**/*_BASE_*
+**/*_LOCAL_*
+**/*_REMOTE_*
+*.orig
