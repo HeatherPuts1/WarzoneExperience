@@ -22,6 +22,8 @@ public class MetaVoidRevealer : MonoBehaviour
 
     private bool isFading = false;
     private bool isRevealed = false;
+    public bool audiostarted = false;
+    public AudioSource audioSource;
 
     void Awake()
     {
@@ -57,7 +59,14 @@ public class MetaVoidRevealer : MonoBehaviour
     public void RevealWorld()
     {
         if (!isFading && !isRevealed)
+        {
             StartCoroutine(RevealCoroutine());
+            if (audiostarted = false)
+            { audiostarted = true;
+                audioSource.Play();
+            }
+         }
+        
     }
 
     public void HideWorld()

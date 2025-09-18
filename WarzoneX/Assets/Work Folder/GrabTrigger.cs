@@ -10,6 +10,7 @@ public class GrabTrigger : MonoBehaviour
 
     [SerializeField] public bool isGrabbing = false;
     [SerializeField] private MetaVoidRevealer revealer; // Reference to MetaVoidRevealer
+    public AudioSource audioSource;
 
     void Start()
     {
