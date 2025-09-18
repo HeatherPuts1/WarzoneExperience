@@ -1,0 +1,10 @@
+# ninja log v5
+86	6087	7798897766050059	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	d8a442bd0a834c41
+54	6103	7798897766186155	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	a4c0133c991fc7a2
+7	6180	7798897767728645	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	2a1dbd3a20a54831
+127	6184	7798897767289560	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	1971f122d9876fc2
+38	6427	7798897769572761	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	5d4d7d1f246b6d98
+67	6776	7798897774144027	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	3ea886b3ac773606
+114	6851	7798897774859651	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	9b24417d3e94201
+27	7034	7798897776855066	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	d85f76a20c574292
+7034	7298	7798897779651139	C:/Users/Heath/WarzoneX/WarzoneExperience/WarzoneX/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/21633ro4/obj/arm64-v8a/libgame.so	e34f61b205816bb4
