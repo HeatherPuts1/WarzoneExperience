@@ -1,84 +1,70 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using Oculus.Interaction;
 
 
 public class GrabTrigger : MonoBehaviour
 {
-
     private BoxCollider boxCollider; // BoxCollider to modify
+    private Vector3 originalSize;     // Store original size
 
-    [SerializeField] public bool isGrabbing = false; // Determines if the cube can turn green
+    [SerializeField] public bool isGrabbing = false;
+    [SerializeField] private MetaVoidRevealer revealer; // Reference to MetaVoidRevealer
 
-    // Set initial conditions
     void Start()
     {
-        // Store the original material
-        
-
-        // Get the BoxCollider component
         boxCollider = GetComponent<BoxCollider>();
         if (boxCollider == null)
         {
             Debug.LogError("No BoxCollider found on the GameObject.");
         }
+        else
+        {
+            originalSize = boxCollider.size;
+        }
+
+        if (revealer == null)
+        {
+            revealer = FindObjectOfType<MetaVoidRevealer>();
+            if (revealer == null)
+                Debug.LogError("No MetaVoidRevealer found in scene. Assign one in the inspector.");
+        }
     }
 
-    // When the player enters the box collider
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && isGrabbing)
         {
-            // Change the material
-            if (isGrabbing)
-            {
-                Debug.Log("enterCollider");
-            }
+            Debug.Log("enterCollider");
 
-            // Expand the BoxCollider
             if (boxCollider != null)
-            {
                 boxCollider.size *= 3f; // Increase the size by 3x
-            }
+
+            // 🔑 Call RevealWorld when grabbing is detected
+            if (revealer != null)
+                revealer.RevealWorld();
         }
     }
 
-    // Continuously check if the player is staying in the collider
-    void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player") && !isGrabbing)
-        {
-            
-        }
-        if (other.CompareTag("Player") && isGrabbing)
-        {
-           
-        }
-    }
-
-    // When the player exits the box collider
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-           
-
-            // Reset the BoxCollider size back to normal
             if (boxCollider != null)
-            {
-                boxCollider.size = new Vector3(1, 1, 1); // Reset to the original size
-            }
+                boxCollider.size = originalSize; // Reset to original size
         }
     }
 
-    // Set isGrabbing to true
     public void EnableGrabbing()
     {
         isGrabbing = true;
         Debug.Log("detectGrab");
+
+        // 🔑 Optionally reveal immediately when grabbing starts
+        if (revealer != null)
+            revealer.RevealWorld();
     }
 
-    // Set isGrabbing to false
     public void DisableGrabbing()
     {
         isGrabbing = false;
